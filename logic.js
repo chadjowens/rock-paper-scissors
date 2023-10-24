@@ -94,6 +94,7 @@ function game() {
     } else {
         console.log("This statement is FALSE");
     }   
+    gameResult();
 }
 
 // Set the game to play 5 rounds
@@ -106,10 +107,14 @@ for (let i = 1; i <= 5; i++) {
 }
 
 // Determine game winner
-if (playerScore > computerScore) {
-    console.log("Player Wins The Game! Congrats!!"); 
-} else if (computerScore > playerScore) {
-    console.log("Computer Wins The Game! AWWWW!!"); 
-} else {
-    console.log("It Must Have Been A Draw! Try Again!!"); 
+function gameResult() {
+    if (playerScore > computerScore) {
+        return "Player Wins The Game! Congrats!!"; 
+    } else if (computerScore > playerScore) {
+        return "Computer Wins The Game! AWWWW!!"; 
+    } else {
+        return "It Must Have Been A Draw! Try Again!!"; 
+    }   
 }
+console.log(gameResult()); 
+
