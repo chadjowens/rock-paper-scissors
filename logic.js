@@ -15,8 +15,6 @@ const scoreComputerSpan = document.querySelector('.computer-score');
 
 // Making a number for computer choice and converting it to an equivalent string
 const options = ["rock", "paper", "scissors"];
-
-
 function getComputerChoice() {
     const choice = options[Math.floor((Math.random() * options.length))];
     // console.log(choice);
@@ -25,11 +23,10 @@ function getComputerChoice() {
 
 // Calculate number of draws or wins for each round
 function playRound(playerSelection, computerSelection){
-
     if (playerSelection === computerSelection) {
         scoreDraws++;
-        console.log("It's a Tie");
-        console.log("Draws: " + scoreDraws);
+        // console.log("It's a Tie");
+        // console.log("Draws: " + scoreDraws);
         const p = document.createElement('p');
         p.innerText = `You tied! You both picked ${playerSelection}`;
         outcomeDiv.appendChild(p);
@@ -39,15 +36,15 @@ function playRound(playerSelection, computerSelection){
         (playerSelection === "paper" && computerSelection === "rock")
     ) {
         scorePlayer++
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
-        console.log("Player Wins: " + scorePlayer);
+        // console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        // console.log("Player Wins: " + scorePlayer);
         const p = document.createElement('p');
         p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
         outcomeDiv.appendChild(p);
     } else {
         scoreComputer++;
-        console.log(`You Lose! Computer Wins! ${computerSelection} beats ${playerSelection}`)
-        console.log("Computer Wins: " + scoreComputer);
+        // console.log(`You Lose! Computer Wins! ${computerSelection} beats ${playerSelection}`)
+        // console.log("Computer Wins: " + scoreComputer);
         const p = document.createElement('p');
         p.innerText = `You Lose! Computer Wins! ${computerSelection} beats ${playerSelection}`;
         outcomeDiv.appendChild(p);
@@ -65,91 +62,47 @@ const checkForWinner = (scorePlayer, scoreComputer) => {
         h2.classList.add('player-won');
         h2.innerText = `You Won, ${scorePlayer} to ${scoreComputer} Great job beating the computer!`;
         outcomeDiv.appendChild(h2);
+        document.querySelector("#rockBtn").disabled="disabled";
+        document.querySelector("#paperBtn").disabled="disabled";
+        document.querySelector("#scissorsBtn").disabled="disabled";
+        
     } else if (scoreComputer === 5) {
         const h2 = document.createElement('h2');
         h2.classList.add('computer-won');
         h2.innerText = `Computer Won, ${scoreComputer} to ${scorePlayer} Too bad -- you Lost to the Computer!`;
         outcomeDiv.appendChild(h2);
+        document.querySelector("#rockBtn").disabled="disabled";
+        document.querySelector("#paperBtn").disabled="disabled";
+        document.querySelector("#scissorsBtn").disabled="disabled";
     }
 }
-
-
-// function playRound(playerSelection, computerSelection){    
-//     console.log("------------------");
-
-//     const result = checkWinner(playerSelection, computerSelection);
-//     if (result == "Tie") {
-//         return "It's a Tie";
-//     } else if (result == "Player") {
-//         return `You Win! ${playerSelection} beats ${computerSelection}`;
-//     } else {
-//         return `You Lose! Computer Wins! ${computerSelection} beats ${playerSelection}`;
-//     }
-// }
 
 rockBtn.addEventListener("click", () => {
     const computerSelection = getComputerChoice()
         const playerSelection = "rock"
         playRound(playerSelection, computerSelection)
-        console.log("Rock Button");
-        console.log(`computer Choice: ${computerSelection}`);
+        // console.log("Rock Button");
+        // console.log(`computer Choice: ${computerSelection}`);
         checkForWinner(scorePlayer, scoreComputer);
         updateScore(scorePlayer, scoreComputer);
-        
-        // console.log(result);
-        // if(scorePlayer > scoreComputer){
-        //     console.log("Player was the winner!!!");
-        // } else if (scorePlayer < scoreComputer) {
-        //     console.log("Computer was the winner!!!");
-        // } else {
-        //     console.log("There was a tie");
-        // }   
     });
 
 paperBtn.addEventListener("click", () => {
     const computerSelection = getComputerChoice()
         const playerSelection = "paper"
         playRound(playerSelection, computerSelection)
-        console.log("Paper Button");
-        console.log(`computer Choice: ${computerSelection}`);
+        // console.log("Paper Button");
+        // console.log(`computer Choice: ${computerSelection}`);
         updateScore(scorePlayer, scoreComputer);
         checkForWinner(scorePlayer, scoreComputer);
-        // console.log(result);
-        // if(scorePlayer > scoreComputer){
-        //     console.log("Player was the winner!!!");
-        // } else if (scorePlayer < scoreComputer) {
-        //     console.log("Computer was the winner!!!");
-        // } else {
-        //     console.log("There was a tie");
-        // }   
     });
 
 scissorsBtn.addEventListener("click", () => {
     const computerSelection = getComputerChoice()
         const playerSelection = "scissors"
         playRound(playerSelection, computerSelection)
-        console.log("Scissors Button")
-        console.log(`computer Choice: ${computerSelection}`);
+        // console.log("Scissors Button")
+        // console.log(`computer Choice: ${computerSelection}`);
         updateScore(scorePlayer, scoreComputer);
-        checkForWinner(scorePlayer, scoreComputer);
-        // console.log(result);
-        // if(scorePlayer > scoreComputer){
-        //     console.log("Player was the winner!!!");
-        // } else if (scorePlayer < scoreComputer) {
-        //     console.log("Computer was the winner!!!");
-        // } else {
-        //     console.log("There was a tie");
-        // }   
+        checkForWinner(scorePlayer, scoreComputer); 
     });
-
-// function output(){
-//     console.log(playRound());
-
-
-// // console.log("Game Over!!!")
-// // console.log("------------------");
-// // console.log(`Number of Ties: ${scoreDraws}`);
-// // console.log(`Player Score: ${scorePlayer}`);
-// // console.log(`Computer Score: ${scoreComputer}`);
-
-// }
