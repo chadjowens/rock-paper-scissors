@@ -18,7 +18,6 @@ const winnerDiv = document.querySelector('.winner')
 const options = ["rock", "paper", "scissors"];
 function getComputerChoice() {
     const choice = options[Math.floor((Math.random() * options.length))];
-    // console.log(choice);
     return choice;
 }
 
@@ -26,27 +25,17 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         scoreDraws++;
-        // const p = document.createElement('p');
         document.querySelector('.outcome').textContent = `You Tied! You both picked ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`;
-        // p.innerText = `You Tied! You both picked ${playerSelection}`;
-        // outcomeDiv.appendChild(p);
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock")
     ) {
         scorePlayer++
-        // const p = document.createElement('p');
-
         document.querySelector('.outcome').textContent = `You Win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`;
-        // p.innerText = `You Win! ${playerSelection} beats ${computerSelection}`;
-        // outcomeDiv.appendChild(p);
     } else {
         scoreComputer++;
-        // const p = document.createElement('p');
         document.querySelector('.outcome').textContent = `You Lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`;
-        // p.innerText = `You Lose! ${computerSelection} beats ${playerSelection}`;
-        // outcomeDiv.appendChild(p);
     }
 }
 
