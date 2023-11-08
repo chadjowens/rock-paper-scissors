@@ -51,7 +51,7 @@ function playRound(playerSelection, computerSelection){
 }
 
 const updateScore = (scorePlayer, scoreComputer) => {
-        scorePlayerSpan.innerText = `Player Score: ${scorePlayer}`;
+        scorePlayerSpan.innerText = `Player Score: ${scorePlayer} |`;
         scoreComputerSpan.innerText = `Computer Score: ${scoreComputer}`;
 }
 
