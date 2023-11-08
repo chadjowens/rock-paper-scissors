@@ -1,0 +1,77 @@
+.header {
+    margin: auto;
+    /* width: 50%; */
+    max-width: 600px;
+    /* align-text: center; */
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    /* border: 2px, black; */
+    /* border-style: dashed; */
+    padding: 20px;
+}
+
+.running-score {
+ margin: auto;
+ /* width: 50%; */
+ max-width: 600px;
+ /* align-text: center; */
+ text-align: center;
+ font-family: Arial, Helvetica, sans-serif;
+ font-style: normal;
+ border: 2px, black;
+ border-style: dashed;
+ padding: 20px;
+}
+
+.container {
+    margin: auto;
+    /* width: 50%; */
+    /* align-content: center; */
+    max-width: 600px;
+    text-align: center;
+    border: 2px, black;
+    border-style: dashed;
+    padding: 20px;
+}
+
+.outcome {
+    margin: auto;
+    /* width: 50%; */
+    /* align-content: center; */
+    max-width: 600px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    border: 2px, black;
+    border-style: dashed;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.winner {
+    margin: auto;
+    /* width: 50%; */
+    /* align-content: center; */
+    max-width: 600px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    border: 2px, black;
+    border-style: dashed;
+    padding: 20px;
+    background-color: rgb(214, 228, 253);
+}
+
+.container-2 {
+    margin: auto;
+    /* width: 50%; */
+    /* align-content: center; */
+    max-width: 600px;
+    text-align: center;
+    border: 2px, black;
+    border-style: dashed;
+    padding: 20px;
+    background-color: rgb(198, 218, 255);
+}
